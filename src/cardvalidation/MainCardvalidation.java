@@ -10,8 +10,7 @@ public class MainCardvalidation {
         long cardNumber = input.nextLong();
         creditCard.sumOfDoubleEvenPlace(cardNumber);
         creditCard.sumOfOddPlace(cardNumber);
-//        creditCard.sumOfDoubleEvenAndOddPlaceNumber();
-
-
+        creditCard.sumOfDoubleEvenAndOddPlaceNumber(cardNumber);
+        creditCard.isValid(cardNumber);
     }
 }

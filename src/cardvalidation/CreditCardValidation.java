@@ -1,9 +1,11 @@
 package cardvalidation;
 
 public class CreditCardValidation {
-    public static long userInput;
+//    public static long userInput;
+
     public int sumOfDoubleEvenPlace(long userInput)
     {
+        validateLengthOfcardNumber(userInput);
         String stringOfUserInput = String.valueOf(userInput);
 
         int sum = 0;
@@ -30,18 +32,35 @@ public class CreditCardValidation {
     }
 
     public int sumOfOddPlace(long userInput) {
-        String stringUserInput = String.valueOf(userInput);
+        String userInputString = String.valueOf(userInput);
         int sum =0;
-        for (int index = stringUserInput.length() - 1; index >= 0 ; index -= 2) {
-                int intUserInput = Integer.parseInt(String.valueOf(stringUserInput.charAt(index)));
+        for (int index = userInputString.length() - 1; index >= 0 ; index -= 2) {
+                int intUserInput = Integer.parseInt(String.valueOf(userInputString.charAt(index)));
                 sum += intUserInput;
                 System.out.println(sum);
             }
             return sum;
     }
-//    public void sumOfDoubleEvenAndOddPlaceNumber()
-//    {
-//        int total = sumOfDoubleEvenPlace() + sumOfOddPlace(userInput);
-//        System.out.println(total);
-//    }
+    public int sumOfDoubleEvenAndOddPlaceNumber(long userInput)
+    {
+        int total = sumOfDoubleEvenPlace(userInput) + sumOfOddPlace(userInput);
+        System.out.println(total);
+        return total;
+    }
+
+    public boolean isValid(long userInput)
+    {
+         return (sumOfDoubleEvenAndOddPlaceNumber(userInput) % 10 == 0);
+    }
+
+    public void validateLengthOfcardNumber(long userInput)
+    {
+        String userInputString = String.valueOf(userInput);
+        if (userInputString.length() > 16 || userInputString.length() < 13) throw new IllegalArgumentException("Card number is incorrect");
+    }
+
+    public int getSize(long userInput) {
+        String userInputString = String.valueOf(userInput);
+        return userInputString.length();
+    }
 }
