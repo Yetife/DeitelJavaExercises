@@ -6,6 +6,7 @@ public class AirConditioner {
     private int currentTemperature;
 
     public AirConditioner(int currentTemperature) {
+
         this.currentTemperature = currentTemperature;
     }
 
