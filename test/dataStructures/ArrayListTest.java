@@ -12,8 +12,10 @@ public class ArrayListTest {
     @BeforeEach
     public void setUp()
     {
+
         myArrayList = new ArrayList();
     }
+
     @Test
     public void arrayListCanBeCreatedTest()
     {
@@ -115,11 +117,20 @@ public class ArrayListTest {
     @Test
     public void arrayIndexCanBeChangedWhenAnItemIsRemoved()
     {
-        myArrayList.add(34);
+        myArrayList.add(42);
         myArrayList.add(32);
         myArrayList.add(99);
+        assertEquals(32,myArrayList.get(1));
         //when
         myArrayList.remove(32);
-        assertEquals(1, myArrayList.getIndexOf(99));
+        assertEquals(99, myArrayList.get(1));
+    }
+    @Test
+    public void insertANewElementAndTheOldOnesAreShiftedToTheRightForTheNewOne()
+    {
+        myArrayList.add(42,0);
+        myArrayList.add(22,1);
+        myArrayList.add(56,2);
+//        myArrayList.insert()
     }
 }
