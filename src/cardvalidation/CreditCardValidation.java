@@ -1,7 +1,6 @@
 package cardvalidation;
 
 public class CreditCardValidation {
-//    public static long userInput;
 
     public int sumOfDoubleEvenPlace(long userInput)
     {
@@ -63,4 +62,24 @@ public class CreditCardValidation {
         String userInputString = String.valueOf(userInput);
         return userInputString.length();
     }
+//    public static CreditCardType getCreditCardType(long cardNumber) {
+//        CreditCardType creditCardType;
+//        String cardNumberString = String.valueOf(cardNumber);
+//        String cardNumberPrefix = String.valueOf(cardNumberString.charAt(0));
+//        switch (cardNumberPrefix) {
+//            case "3":
+//                if (String.valueOf(cardNumberString.charAt(1)).equals("7"))
+//                    creditCardType = CreditCardType.AMERICA_EXPRESS_CARD;
+//                break;
+//            case "4":
+//                creditCardType = CreditCardType.VISA_CARDS;
+//                break;
+//            case "5":
+//                creditCardType = CreditCardType.MASTER_CARDS;
+//                break;
+//            case "6":
+//                creditCardType = CreditCardType.DISCOVER_CARDS;
+//        }
+//        return creditCardType;
+//    }
 }
