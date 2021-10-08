@@ -1,2 +1,5 @@
-package cardvalidation;public class CreditCardType {
+package cardvalidation;
+
+public enum CreditCardType {
+    VISA_CARDS, MASTER_CARDS, AMERICA_EXPRESS_CARD, DISCOVER_CARDS
 }
