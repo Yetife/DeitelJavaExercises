@@ -17,4 +17,6 @@ public interface List {
     int getCapacity();
 
     int getIndexOf(int element);
+
+    void insert();
 }
