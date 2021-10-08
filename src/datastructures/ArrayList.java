@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArrayList implements List{
 
-    private boolean isEmpty = true;
+    private final boolean isEmpty = true;
     private int size;
     private int[] elements;
 
@@ -38,6 +38,16 @@ public class ArrayList implements List{
     @Override
     public void remove(int element) {
         if (isEmpty()) throw new IllegalArgumentException("ArrayList is empty");
+        //find value(position) in elements;
+        //overwrire it with values in the right
+        int position = getIndexOf(element);
+        for (int i = position; i < size ; i++) {
+            try {
+                elements[i] = elements[i + 1];
+            }
+            catch (ArrayIndexOutOfBoundsException ex){
+            }
+        }
         size--;
     }
 
@@ -50,7 +60,6 @@ public class ArrayList implements List{
     public int get(int position) {
         return elements[position];
     }
-
 
     @Override
     public int getCapacity() {
@@ -67,7 +76,8 @@ public class ArrayList implements List{
         return 0;
     }
 
+    @Override
+    public void insert() {
 
-
-
+    }
 }
